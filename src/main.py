@@ -109,6 +109,7 @@ class CheckRun:
     def create(self):
         self.create_annotations()
         payload = self.get_payload()
+        print(self.AUTH_HEADER_VALUE)
         response = requests.post(
             f'{self.GITHUB_API}/repos/{self.repo_full_name}/check-runs',
             headers={
