@@ -25,8 +25,8 @@ main() {
 
     cat pull_request.json
     
-    PR_BASE_SHA=$(jq -r '.[0].base.sha' < pull_request.json)
-    PR_HEAD_SHA=$(jq -r '.[0].head.sha' < pull_request.json)
+    PR_BASE_SHA=$(jq -r '.base.sha' < pull_request.json)
+    PR_HEAD_SHA=$(jq -r '.head.sha' < pull_request.json)
 
 
     export PR_BASE_SHA
