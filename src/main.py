@@ -76,7 +76,7 @@ class CheckRun:
         missing_ranges_count = number_of_annotations if number_of_annotations < 50 else "50+"
         summary = f"""
         Coverage Report:
-        Total files : {len(total_coverage_files)}
+        Total files : {len(total_coverage_files)} - {total_coverage_files}
         Files with missing lines : {missing_coverage_file_count}
         Missing coverage line ranges : {missing_ranges_count}
         """
