@@ -38,8 +38,9 @@ class CheckRun:
     GITHUB_EVENT_PATH = os.environ['GITHUB_EVENT_PATH']
     GITHUB_API= os.environ['GITHUB_API_URL']
 
-    ACCEPT_HEADER_VALUE = f"application/vnd.github.v3+json"
-    AUTH_HEADER_VALUE = f"token {GITHUB_TOKEN}"
+    ACCEPT_HEADER_VALUE = f"application/vnd.github+json"
+    AUTH_HEADER_VALUE = f"Bearer {GITHUB_TOKEN}"
+    GITHUB_API_VERSION_VALUE = "2022-11-28"
 
     # This is the max annotations Github API allows.
     MAX_ANNOTATIONS = 50
@@ -113,6 +114,7 @@ class CheckRun:
             headers={
                 'Accept': self.ACCEPT_HEADER_VALUE,
                 'Authorization': self.AUTH_HEADER_VALUE,
+                'X-GitHub-Api-Version': self.GITHUB_API_VERSION_VALUE,
             },
             json=payload,
         )
